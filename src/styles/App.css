@@ -13,6 +13,7 @@
   border-bottom: 1px solid white;
 }
 .ponuda .artikli {
+  margin-top: 20px;
   font-size: 18px;
   padding-bottom: 30px;
 }
@@ -64,6 +65,20 @@
   border-bottom: none;
   border-top: 1px dashed white;
 }
+.ponuda .kolicina {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 40px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid white;
+  border-bottom: none;
+  border-top: 1px dashed white;
+}
+.ponuda .kolicina button:hover {
+  cursor: pointer;
+}
 
 .navBar {
   background-color: black;
@@ -113,6 +128,7 @@
   justify-content: center;
 }
 .navBar .sirina .lista .link li:hover {
+  cursor: pointer;
   background-color: rgba(255, 255, 255, 0.5);
 }
 .navBar .sirina .hamburger {
@@ -212,6 +228,81 @@
   border-bottom: 1px solid white;
 }
 
+.prijava {
+  margin-top: 95px;
+  min-height: 70vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 20px;
+  background-color: wheat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+.prijava .naslov {
+  margin-top: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+.prijava form {
+  width: 50vw;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  margin-bottom: 20px;
+}
+.prijava form div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.prijava form div label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.prijava form div input {
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
+}
+.prijava .submit {
+  margin-top: 10px;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+.prijava .submit button {
+  background-color: rgba(124, 4, 4, 0.8);
+  color: white;
+  border: none;
+  font-size: 20px;
+  padding: 10px 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.prijava .submit button:hover {
+  background-color: rgba(124, 4, 4, 0.7);
+  cursor: pointer;
+}
+.prijava .nemaNalog {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
 .pčele {
   margin-top: 95px;
   min-height: 100vh;
@@ -292,6 +383,20 @@
   border: 1px solid white;
   border-bottom: none;
   border-top: 1px dashed white;
+}
+.pčele .pozadina .ostalo .kolicina {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 40px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid white;
+  border-bottom: none;
+  border-top: 1px dashed white;
+}
+.pčele .pozadina .ostalo .kolicina button:hover {
+  cursor: pointer;
 }
 .pčele .pozadina .ostalo .artikli {
   font-size: 18px;
@@ -533,8 +638,27 @@
   gap: 10px;
   border: 1px solid black;
 }
+.kupovina .isprazniKorpu {
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.kupovina .isprazniKorpu div {
+  color: white;
+  background-color: red;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 200px;
+  font-size: 20px;
+}
+.kupovina .isprazniKorpu div:hover {
+  cursor: pointer;
+  background-color: rgba(255, 0, 0, 0.7);
+}
 .kupovina .zavrsi {
-  height: 200px;
+  height: 100px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -664,45 +788,78 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .navBar {
-    background-color: black;
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 95px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-  }
-  .sirina {
-    max-width: 1200px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
   .sirina .lista {
-    position: fixed;
-    left: 100%;
+    position: absolute;
+    right: 10000px;
   }
   .sirina .lista-off {
-    position: fixed;
-    left: 100%;
-  }
-  .sirina .lista-on {
-    width: 100%;
-    position: fixed;
-    top: 0;
+    width: 0%;
     margin-top: 95px;
-    right: 0;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.3);
     border: 1px solid white;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    position: absolute;
+    top: 0px;
+    right: -200px;
+    animation: out 0.6s forwards;
+    -webkit-animation: out 0.6s forwards;
+  }
+  @keyframes out {
+    100% {
+      right: -200px;
+    }
+    100% {
+      top: 0;
+    }
+    100% {
+      width: 0%;
+    }
+  }
+  .sirina .lista-off .link {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+  }
+  .sirina .lista-off .link li {
+    border-bottom: 1px solid white;
+    height: 50px;
+    width: 100px;
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 30px;
+    margin-bottom: 5px;
+  }
+  .sirina .lista-off .link li:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  .sirina .lista-on {
+    width: 0%;
+    margin-top: 95px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    top: 0px;
+    right: -100px;
+    animation: slide 0.6s forwards;
+    -webkit-animation: slide 0.6s forwards;
+  }
+  @keyframes slide {
+    100% {
+      right: 0;
+    }
+    100% {
+      top: 0;
+    }
+    100% {
+      width: 100%;
+    }
   }
   .sirina .lista-on .link {
     text-decoration: none;
@@ -733,43 +890,19 @@
     cursor: pointer;
   }
   .kupovina {
-    background-color: wheat;
-    margin-top: 95px;
-    min-height: 100vh;
-    max-height: 100%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
   }
   .kupovina .glavniDiv {
     width: 90vw;
   }
   .kupovina .tabela {
-    height: 50px;
     font-size: 20px;
-    background-color: white;
-    margin-top: 30px;
-    border: 2px solid black;
-    border-bottom: 1px solid black;
-    border-left: none;
     width: 100%;
     display: grid;
     grid-template-columns: 200px repeat(3, 1fr) 50px;
     grid-template-rows: 30px;
   }
-  .kupovina .tabela div {
-    border-left: 2px solid black;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   .kupovina .tabelaSaProizvodima {
-    background-color: white;
-    border: 1px solid black;
-    border-top: none;
     font-size: 18px;
   }
   .kupovina .tabelaSaProizvodima .kolone {
@@ -777,56 +910,6 @@
     display: grid;
     grid-template-columns: 200px repeat(3, 1fr) 50px;
     grid-template-rows: 100px;
-  }
-  .kupovina .tabelaSaProizvodima .kolone .brisanje {
-    color: red;
-    font-size: 23px;
-  }
-  .kupovina .tabelaSaProizvodima .kolone .brisanje:hover {
-    cursor: pointer;
-    font-size: 30px;
-  }
-  .kupovina .tabelaSaProizvodima .kolone .kolicina {
-    display: flex;
-    gap: 10px;
-  }
-  .kupovina .tabelaSaProizvodima .kolone .kolicina button {
-    height: 17px;
-    display: flex;
-    align-items: center;
-  }
-  .kupovina .tabelaSaProizvodima .kolone .kolicina button:hover {
-    cursor: pointer;
-  }
-  .kupovina .tabelaSaProizvodima .kolone div {
-    height: 100px;
-    border: 1px solid black;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .kupovina .tabelaSaProizvodima .kolone .proizvod {
-    height: 100px;
-    border: 1px solid black;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 40px;
-    position: relative;
-  }
-  .kupovina .tabelaSaProizvodima .kolone .proizvod .link {
-    height: 95%;
-    width: 70px;
-  }
-  .kupovina .tabelaSaProizvodima .kolone .proizvod img {
-    height: 95%;
-    width: 70px;
-    -o-object-fit: cover;
-       object-fit: cover;
-    position: absolute;
-    left: 0;
   }
   .kupovina .ukupno {
     height: 50px;
@@ -856,49 +939,22 @@
     background-color: rgb(107, 194, 223);
   }
   .homepage {
-    min-height: 100vh;
-    max-height: 100%;
     width: 100vw;
-    background-image: url("https://t4.ftcdn.net/jpg/05/11/90/09/360_F_511900979_sdZ3Z3YoyVxWD5Spzl703tVkqZJFaaom.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: scroll;
   }
   .homepage .bojaPozadine {
-    min-height: 100vh;
-    max-height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   .homepage .bojaPozadine .izlog {
-    height: 100%;
     width: 100%;
     margin-top: 95px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     margin-left: 0;
   }
   .homepage .bojaPozadine .izlog .ponuda {
     width: 70%;
-    display: flex;
-    justify-content: center;
     font-size: 3rem;
-    color: white;
-    margin-top: 0px;
-    border-bottom: 1px solid white;
   }
   .homepage .bojaPozadine .izlog h2 {
-    margin-top: 100px;
-    margin-bottom: 100px;
     font-size: 3rem;
-    color: white;
-    border-bottom: 1px solid white;
   }
   .homepage .bojaPozadine .izlog .slike {
     width: 100%;
@@ -906,18 +962,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, 240px);
     gap: 20px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 50px;
   }
   .homepage .bojaPozadine .izlog .slike .link {
-    height: 230px;
-    width: 230px;
-    text-decoration: none;
-    color: white;
     font-size: 2rem;
-    padding-bottom: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -934,288 +981,109 @@
     width: 80%;
   }
   .navBar {
-    background-color: black;
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    top: 0;
     min-width: 100vw;
     max-width: 100%;
-    height: 95px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
   }
   .navBar .sirina {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
   .navBar .sirina .logo {
-    padding-left: 20px;
-    text-decoration: none;
-    color: white;
     font-size: 16px;
   }
   .navBar .sirina .lista {
-    height: 95px;
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-    gap: 10px;
     padding-right: 50px;
   }
-  .navBar .sirina .lista .link {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-  }
-  .navBar .sirina .lista .link li {
-    height: 95px;
-    width: 70px;
-    display: flex;
-    gap: 3px;
-    align-items: center;
-    justify-content: center;
-  }
-  .navBar .sirina .lista .link li:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
   .homepage {
-    min-height: 100vh;
-    max-height: 100%;
     width: 100vw;
-    background-image: url("https://t4.ftcdn.net/jpg/05/11/90/09/360_F_511900979_sdZ3Z3YoyVxWD5Spzl703tVkqZJFaaom.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: scroll;
   }
   .homepage .bojaPozadine {
-    min-height: 100vh;
-    max-height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   .homepage .bojaPozadine .izlog {
-    height: 100%;
     width: 100%;
-    margin-top: 95px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     text-align: center;
     margin-left: 0;
   }
   .homepage .bojaPozadine .izlog .ponuda {
     width: 70%;
-    display: flex;
-    justify-content: center;
     font-size: 2rem;
-    color: white;
-    margin-top: 0px;
-    border-bottom: 1px solid white;
   }
   .homepage .bojaPozadine .izlog h2 {
-    margin-top: 100px;
-    margin-bottom: 100px;
     font-size: 2rem;
-    color: white;
-    border-bottom: 1px solid white;
   }
   .homepage .bojaPozadine .izlog .slike {
     width: 100%;
-    height: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, 140px);
     gap: 20px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 50px;
   }
   .homepage .bojaPozadine .izlog .slike .link {
     height: 130px;
     width: 130px;
-    text-decoration: none;
-    color: white;
     font-size: 1rem;
-    padding-bottom: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .homepage .bojaPozadine .izlog .slike .link div {
-    width: 100%;
-    height: 100%;
-  }
-  .homepage .bojaPozadine .izlog .slike .link img {
-    border: 1px solid black;
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-    -o-object-fit: cover;
-       object-fit: cover;
-    transition: 0.5s;
-  }
-  .homepage .bojaPozadine .izlog .slike .link img:hover {
-    transform: scale(1.1);
-  }
-  .homepage .bojaPozadine .izlog .slike .link p {
-    margin-top: 0;
-    border-bottom: 1px solid white;
   }
   h2 {
     font-size: 20px;
   }
   .ponuda {
-    max-width: 1100px;
-    width: 100vw;
     display: grid;
     grid-template-columns: repeat(auto-fit, 140px);
     grid-template-rows: 1fr;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     border-bottom: 1px solid white;
     margin-top: 50px;
     padding: 0;
   }
   .ponuda .artikli {
     font-size: 15px;
-    padding-bottom: 30px;
   }
   .ponuda .artikli img {
     width: 130px;
     height: 130px;
-    -o-object-fit: contain;
-       object-fit: contain;
-    background-color: white;
-    border-radius: 50%;
-    border: 1px solid white;
   }
   .ponuda .korpa {
-    border: 1px solid white;
-    background-color: rgba(255, 0, 0, 0.8);
-    display: flex;
-    padding: 10px;
-    align-items: center;
-    justify-content: center;
     font-size: 16px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
-  .ponuda .korpa:hover {
-    cursor: pointer;
-    background-color: rgba(139, 0, 0, 0.8);
-  }
-  .ponuda .naziv {
-    background-color: rgba(0, 0, 0, 0.6);
-    margin: 0;
-    margin-top: 10px;
-    height: 40px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid white;
-    border-bottom: none;
-  }
-  .ponuda .cena {
-    background-color: rgba(0, 0, 0, 0.6);
-    height: 40px;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid white;
-    border-bottom: none;
-    border-top: 1px dashed white;
   }
   .kupovina {
-    background-color: wheat;
-    margin-top: 95px;
-    min-height: 100vh;
-    max-height: 100%;
     width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
   }
   .kupovina .glavniDiv {
     width: 90vw;
   }
-  .kupovina .prazno {
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-  }
-  .kupovina .prazno .link {
-    text-decoration: none;
-    color: black;
-    background-color: white;
-    border: 1px solid black;
-    padding: 5px;
-  }
-  .kupovina .prazno .link:hover {
-    background-color: rgba(255, 0, 0, 0.5);
-  }
-  .kupovina h2 {
-    margin-top: 50px;
-  }
   .kupovina .tabela {
-    height: 50px;
-    font-size: 12px;
-    background-color: white;
-    margin-top: 30px;
+    font-size: 15px;
     border: 1px solid black;
     border-bottom: 1px solid black;
     border-right: none;
     width: 100%;
     display: grid;
-    grid-template-columns: 50px repeat(3, 1fr) 20px;
+    grid-template-columns: 100px repeat(3, 1fr) 50px;
     grid-template-rows: 30px;
   }
   .kupovina .tabela div {
     border-left: 0px solid black;
     border-right: 1px solid black;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   .kupovina .tabelaSaProizvodima {
-    background-color: white;
     border: none;
     border-right: 1px solid black;
     border-top: none;
-    font-size: 10px;
+    font-size: 15px;
   }
   .kupovina .tabelaSaProizvodima .kolone {
     width: 100%;
     display: grid;
-    grid-template-columns: 50px repeat(3, 1fr) 20px;
+    grid-template-columns: 100px repeat(3, 1fr) 50px;
     grid-template-rows: 100px;
     justify-content: center;
     align-items: center;
   }
   .kupovina .tabelaSaProizvodima .kolone .brisanje {
-    color: red;
     font-size: 13px;
   }
   .kupovina .tabelaSaProizvodima .kolone .brisanje:hover {
-    cursor: pointer;
     font-size: 15px;
   }
   .kupovina .tabelaSaProizvodima .kolone .kolicina {
@@ -1223,39 +1091,26 @@
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
-    gap: 10px;
   }
   .kupovina .tabelaSaProizvodima .kolone .kolicina button {
     width: 5px;
-    height: 17px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .kupovina .tabelaSaProizvodima .kolone .kolicina button:hover {
-    cursor: pointer;
-  }
   .kupovina .tabelaSaProizvodima .kolone div {
-    height: 100px;
     border: none;
     border-left: 1px solid black;
     border-top: 1px solid black;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   .kupovina .tabelaSaProizvodima .kolone .proizvod {
-    height: 100px;
     border: 1px solid black;
     border-right: none;
     border-bottom: none;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding-right: 0px;
-    position: relative;
   }
   .kupovina .tabelaSaProizvodima .kolone .proizvod .link {
     height: 0%;
@@ -1264,56 +1119,22 @@
   .kupovina .tabelaSaProizvodima .kolone .proizvod img {
     height: 0%;
     width: 0px;
-    -o-object-fit: cover;
-       object-fit: cover;
-    position: absolute;
-    left: 0;
   }
   .kupovina .ukupno {
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 20px;
-    gap: 10px;
     border: 1px solid black;
     border-right: none;
   }
   .kupovina .zavrsi {
     height: 200px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  .kupovina .zavrsi div {
-    background-color: lightblue;
-    padding: 5px;
-    border: 1px solid black;
-    border-radius: 5px;
-    width: 200px;
-    font-size: 20px;
-  }
-  .kupovina .zavrsi div:hover {
-    cursor: pointer;
-    background-color: rgb(107, 194, 223);
   }
   #footer {
-    height: auto;
     width: 100vw;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   #footer .container {
     width: 100%;
-    padding-top: 20px;
-    background-color: black;
-    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     gap: 30px;
   }
   #footer .container .submit {
@@ -1321,19 +1142,5 @@
   }
   #footer .kontakt {
     width: 100%;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-  }
-  #footer .mreze {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-  }
-  #footer .mreze a:hover {
-    cursor: pointer;
-    font-size: 30px;
   }
 }/*# sourceMappingURL=App.css.map */

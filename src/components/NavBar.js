@@ -24,7 +24,8 @@ export default function NavBar({stavke}) {
                     <Link className="link" to="/"><li>Početna</li></Link> 
                     <Link className="link" to="/prodaja"><li>Prodaja</li></Link> 
                     <Link className="link" to="/galerija"><li>Galerija</li></Link> 
-                    <a className="link" href="#footer"><li>Kontakt</li></a> 
+                    <a className="link" href="#footer"><li>Kontakt</li></a>
+                    <Link className="link" to="/Prijava"><li>Prijava</li></Link> 
                     <Link className="link" to="/korpa"><li><BsCart/><p>{stavke}</p></li></Link> 
                 </ul>
                 <div className="hamburger" onClick={menu}>
@@ -36,6 +37,7 @@ export default function NavBar({stavke}) {
                     <Link className="link" to="/prodaja"><li>Prodaja</li></Link> 
                     <Link className="link" to="/galerija"><li>Galerija</li></Link> 
                     <a className="link" href="#footer"><li>Kontakt</li></a> 
+                    <Link className="link" to="/Prijava"><li>Prijava</li></Link> 
                     <Link className="link" to="/korpa"><li><BsCart/><p>{stavke}</p></li></Link> 
                 </ul>
                 </div>

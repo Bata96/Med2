@@ -40,6 +40,7 @@ export default function Cart({korpa, setKorpa, prazna, setPrazna, stavke, setSta
         artikal[0].kol = artikal[0].kol + 1;
         setKoli(koli + 1);
         setStavke(stavke + 1);
+        
     }
 
     const obrisi = (id) => {
@@ -58,6 +59,14 @@ export default function Cart({korpa, setKorpa, prazna, setPrazna, stavke, setSta
             setStavke(stavke - artikal[0].kol);
             artikal[0].kol = 1;
         }
+    }
+
+    const isprazni = () => {
+        setPrazna(["prazna"]);
+        setKoli(0);
+        setStavke(0);
+        korpa.map((item) => item.kol = 1)
+        korpa.splice(0);
     }
 
     return (
@@ -87,8 +96,10 @@ export default function Cart({korpa, setKorpa, prazna, setPrazna, stavke, setSta
                     <div className="ukupno">
                         <div>Ukupno:</div><div>{ukupno + " RSD"}</div>
                     </div>
-                        
                     </div>
+                        <div className="isprazniKorpu">
+                            <div onClick={isprazni}>Isprazni korpu</div>
+                        </div>
                         <div className="zavrsi">
                             <div>Završi kupovinu</div>
                         </div>

@@ -11,38 +11,40 @@ import Home from './components/Home';
 import Pića from "./components/Pića";
 import Voće from "./components/Voće";
 import Džem from "./components/Džem";
+import Prijava from './components/Prijava';
+import Registracija from './components/Registracija';
 
 function App() {
   const [proizvodi] = useState([
-        {key: "1",  kol: 1, id: "1" , src:"https://poljomarket.rs/img/slj1.jpg", alt: "sljiva", ime: "Šljiva", kg: "1 l", cena: 25, kod: "voće" },
-        {key: "2",  kol: 1, id: "2" , src:"https://online.idea.rs/images/products/100/100104329_1l.jpg?1558624232", alt: "kajsija", ime: "Kajsija", kg: "1 l", cena: 70, kod: "voće" },
-        {key: "3",  kol: 1, id: "3" , src:"https://www.kurir.rs/data/images/2019/08/22/22/1956675_stockphotodarkbluegrapewithleavesisolatedonwhitebackgroundwithclippingpathfulldepthoffield604667843_ff.jpg", alt: "grozđe", ime: "Grožđe", kg: "1 l", cena: 100, kod: "voće" },
-        {key: "4",  kol: 1, id: "4" , src:"https://www.princfruit.rs/images/usluga/dunja-izvoz-princ-fruit-01.jpg", alt: "dunja", ime: "Dunja", kg: "1 l", cena: 100, kod: "voće" },
-        {key: "5",  kol: 1, id: "5" , src:"https://plitvicemarketi.rs/images/thumbs/0009926_tresnje-kg_511.jpeg", alt: "tresnja", ime: "Trešnja", kg: "1 l", cena: 120, kod: "voće" },
-        {key: "6",  kol: 1, id: "6" , src:"https://online.idea.rs/images/products/489/489000002_1l.jpg?1580991178", alt: "kompot od dunje", ime: "Kompot od dunje", kg: "1 l", cena: 600, kod: "džem" },
-        {key: "7",  kol: 1, id: "7" , src:"https://img.goglasi.com/img/227183949", alt: "dzem od šipka", ime: "Džem od šipka", kg: "1 l", cena: 600, kod: "džem" },
-        {key: "8",  kol: 1, id: "8" , src:"https://online.idea.rs/images/products/434/434105182_1l.jpg?1567008645", alt: "dzem od maline", ime: "Džem od maline", kg: "1 l", cena: 600, kod: "džem" },
-        {key: "9",  kol: 1, id: "9" , src:"https://www.swisslion-takovo.com/wp-content/uploads/2017/12/marmelada-kajsija-800g-1.jpg", alt: "dzem od kajsije", ime: "Marmelada od kajsije", kg: "1 l", cena: 600, kod: "džem" },
-        {key: "0",  kol: 1, id: "10", src:"https://www.swisslion-takovo.com/wp-content/uploads/2017/12/dzem-sljiva-800g-1.jpg", alt: "dzem od sljive", ime: "Džem od šljive", kg: "1 l", cena: 600, kod: "džem" },
-        {key: "10", kol: 1, id: "11", src:"https://www.swisslion-takovo.com/wp-content/uploads/2017/12/dzem-visnja-1.jpg", alt: "dzem od visnje", ime: "Džem od višnje", kg: "1 l", cena: 600, kod: "džem" },
-        {key: "11", kol: 1, id: "12", src:"https://kulinar.rs/slike/Rakija-DUNJA-Kovilj-07l-324x324.jpg", alt: "dunjevaca", ime: "Rakija od dunje", kg: "1 l", cena: 1200, kod: "pića" },
-        {key: "12", kol: 1, id: "13", src:"https://kulinar.rs/slike/Rakija-KAJSIJA-Kovilj-324x324.jpg", alt: "kajsijevaca", ime: "Rakija od kajsije", kg: "1 l", cena: 1000, kod: "pića" },
-        {key: "13", kol: 1, id: "14", src:"https://kulinar.rs/slike/Rakija-SLJIVA-Kovilja-07l.jpg", alt: "sljivovica", ime: "Rakija od šljive", kg: "1 l", cena: 500, kod: "pića" },
-        {key: "14", kol: 1, id: "15", src:"https://www.ideaonline.me/images/products/451/451000291_1l.jpg?1513863791", alt: "lozovaca", ime: "Lozova rakija", kg: "1 l", cena: 700, kod: "pića" },
-        {key: "15", kol: 1, id: "16", src:"https://cenoteka.rs/assets/images/articles/belo-vino-plantaze-moje-vino-1l-1005847-large.jpg", alt: "belo vino", ime: "Belo vino", kg: "1 l", cena: 1000, kod: "pića" },
-        {key: "16", kol: 1, id: "17", src:"https://cenoteka.rs/assets/images/articles/crno-vino-plantaze-cabernet-0-75l-1005858-large.jpg", alt: "crno vino", ime: "Crno vino", kg: "1 l", cena: 1000, kod: "pića" },
-        {key: "17", kol: 1, id: "18", src:"https://s.cdnmpro.com/284187778/p/l/8/primed-bagremov-med-700g~738.jpg", alt: "tegla sa medom", ime: "Bagremov med", kg: "1 kg", cena: 1200, kod: "med" },
-        {key: "18", kol: 1, id: "19", src:"https://s.cdnmpro.com/284187778/p/l/8/primed-bagremov-med-700g~738.jpg", alt: "tegla sa medom", ime: "Bagremov med", kg: "500 g", cena: 600, kod: "med" },
-        {key: "19", kol: 1, id: "20", src:"https://s.cdnmpro.com/284187778/p/l/6/primed-lipov-med-700g~736.jpg", alt: "tegla sa medom", ime: "Lipov med", kg: "1 kg", cena: 1000, kod: "med" },
-        {key: "20", kol: 1, id: "21", src:"https://s.cdnmpro.com/284187778/p/l/6/primed-lipov-med-700g~736.jpg", alt: "tegla sa medom", ime: "Lipov med", kg: "500 g", cena: 500, kod: "med" },
-        {key: "21", kol: 1, id: "22", src:"https://primed.rs/wp-content/uploads/2021/03/SUNCOKRETOV-MED-700g-1.jpg", alt: "tegla sa medom", ime: "Suncokretov med", kg: "1 kg", cena: 800, kod: "med" },
-        {key: "22", kol: 1, id: "23", src:"https://primed.rs/wp-content/uploads/2021/03/SUNCOKRETOV-MED-700g-1.jpg", alt: "tegla sa medom", ime: "Suncokretov med", kg: "500 g", cena: 400, kod: "med" },
-        {key: "23", kol: 1, id: "24", src:"https://primed.rs/wp-content/uploads/2021/03/primed-livadski-med-700g_739.jpg", alt: "tegla sa medom", ime: "Livadski med", kg: "1 kg", cena: 1000, kod: "med" },       
-        {key: "24", kol: 1, id: "25", src:"https://primed.rs/wp-content/uploads/2021/03/primed-livadski-med-700g_739.jpg", alt: "tegla sa medom", ime: "Livadski med", kg: "500 g", cena: 500, kod: "med" },       
-        {key: "25", kol: 1, id: "26", src:"https://admin.skolazdravlja.ba/uploads/images/bigstock-Propolis-Granules-In-A-Wooden-229463932.jpg", alt: "propolis", ime: "Propolis", kg: "500 g", cena: 1000, kod: "pp" },
-        {key: "26", kol: 1, id: "27", src:"https://etarskaibiljnaulja.rs/1909/pcelinji-zuti-vosak-cera-alba-yellow-beeswax.jpg", alt: "vosak", ime: "Vosak", kg: "1 kg", cena: 200, kod: "pp" },
-        {key: "27", kol: 1, id: "28", src:"http://pcelar-milojkovic.com/images_lrg/perga-lrg.jpg", alt: "perga", ime: "Perga", kg: "500 g", cena: 1000, kod: "pp" },
-        {key: "28", kol: 1, id: "29", src:"http://webpcelarstvo.mojsajt.rs/uploads/31255/images/matica-pcela_5719cb43ec0e5.jpg?w=400&r=4x3", alt: "matica", ime: "Matice", kg: "1 komad", cena: 1000, kod: "pp" }
+        {key: "1",  kol: 1, kol2: 1, id: "1" , src:"https://poljomarket.rs/img/slj1.jpg", alt: "sljiva", ime: "Šljiva", kg: "1 l", cena: 25, kod: "voće" },
+        {key: "2",  kol: 1, kol2: 1, id: "2" , src:"https://online.idea.rs/images/products/100/100104329_1l.jpg?1558624232", alt: "kajsija", ime: "Kajsija", kg: "1 l", cena: 70, kod: "voće" },
+        {key: "3",  kol: 1, kol2: 1, id: "3" , src:"https://www.kurir.rs/data/images/2019/08/22/22/1956675_stockphotodarkbluegrapewithleavesisolatedonwhitebackgroundwithclippingpathfulldepthoffield604667843_ff.jpg", alt: "grozđe", ime: "Grožđe", kg: "1 l", cena: 100, kod: "voće" },
+        {key: "4",  kol: 1, kol2: 1, id: "4" , src:"https://www.princfruit.rs/images/usluga/dunja-izvoz-princ-fruit-01.jpg", alt: "dunja", ime: "Dunja", kg: "1 l", cena: 100, kod: "voće" },
+        {key: "5",  kol: 1, kol2: 1, id: "5" , src:"https://plitvicemarketi.rs/images/thumbs/0009926_tresnje-kg_511.jpeg", alt: "tresnja", ime: "Trešnja", kg: "1 l", cena: 120, kod: "voće" },
+        {key: "6",  kol: 1, kol2: 1, id: "6" , src:"https://online.idea.rs/images/products/489/489000002_1l.jpg?1580991178", alt: "kompot od dunje", ime: "Kompot od dunje", kg: "1 l", cena: 600, kod: "džem" },
+        {key: "7",  kol: 1, kol2: 1, id: "7" , src:"https://img.goglasi.com/img/227183949", alt: "dzem od šipka", ime: "Džem od šipka", kg: "1 l", cena: 600, kod: "džem" },
+        {key: "8",  kol: 1, kol2: 1, id: "8" , src:"https://online.idea.rs/images/products/434/434105182_1l.jpg?1567008645", alt: "dzem od maline", ime: "Džem od maline", kg: "1 l", cena: 600, kod: "džem" },
+        {key: "9",  kol: 1, kol2: 1, id: "9" , src:"https://www.swisslion-takovo.com/wp-content/uploads/2017/12/marmelada-kajsija-800g-1.jpg", alt: "dzem od kajsije", ime: "Marmelada od kajsije", kg: "1 l", cena: 600, kod: "džem" },
+        {key: "0",  kol: 1, kol2: 1, id: "10", src:"https://www.swisslion-takovo.com/wp-content/uploads/2017/12/dzem-sljiva-800g-1.jpg", alt: "dzem od sljive", ime: "Džem od šljive", kg: "1 l", cena: 600, kod: "džem" },
+        {key: "10", kol: 1, kol2: 1, id: "11", src:"https://www.swisslion-takovo.com/wp-content/uploads/2017/12/dzem-visnja-1.jpg", alt: "dzem od visnje", ime: "Džem od višnje", kg: "1 l", cena: 600, kod: "džem" },
+        {key: "11", kol: 1, kol2: 1, id: "12", src:"https://kulinar.rs/slike/Rakija-DUNJA-Kovilj-07l-324x324.jpg", alt: "dunjevaca", ime: "Rakija od dunje", kg: "1 l", cena: 1200, kod: "pića" },
+        {key: "12", kol: 1, kol2: 1, id: "13", src:"https://kulinar.rs/slike/Rakija-KAJSIJA-Kovilj-324x324.jpg", alt: "kajsijevaca", ime: "Rakija od kajsije", kg: "1 l", cena: 1000, kod: "pića" },
+        {key: "13", kol: 1, kol2: 1, id: "14", src:"https://kulinar.rs/slike/Rakija-SLJIVA-Kovilja-07l.jpg", alt: "sljivovica", ime: "Rakija od šljive", kg: "1 l", cena: 500, kod: "pića" },
+        {key: "14", kol: 1, kol2: 1, id: "15", src:"https://www.ideaonline.me/images/products/451/451000291_1l.jpg?1513863791", alt: "lozovaca", ime: "Lozova rakija", kg: "1 l", cena: 700, kod: "pića" },
+        {key: "15", kol: 1, kol2: 1, id: "16", src:"https://cenoteka.rs/assets/images/articles/belo-vino-plantaze-moje-vino-1l-1005847-large.jpg", alt: "belo vino", ime: "Belo vino", kg: "1 l", cena: 1000, kod: "pića" },
+        {key: "16", kol: 1, kol2: 1, id: "17", src:"https://cenoteka.rs/assets/images/articles/crno-vino-plantaze-cabernet-0-75l-1005858-large.jpg", alt: "crno vino", ime: "Crno vino", kg: "1 l", cena: 1000, kod: "pića" },
+        {key: "17", kol: 1, kol2: 1, id: "18", src:"https://s.cdnmpro.com/284187778/p/l/8/primed-bagremov-med-700g~738.jpg", alt: "tegla sa medom", ime: "Bagremov med", kg: "1 kg", cena: 1200, kod: "med" },
+        {key: "18", kol: 1, kol2: 1, id: "19", src:"https://s.cdnmpro.com/284187778/p/l/8/primed-bagremov-med-700g~738.jpg", alt: "tegla sa medom", ime: "Bagremov med", kg: "500 g", cena: 600, kod: "med" },
+        {key: "19", kol: 1, kol2: 1, id: "20", src:"https://s.cdnmpro.com/284187778/p/l/6/primed-lipov-med-700g~736.jpg", alt: "tegla sa medom", ime: "Lipov med", kg: "1 kg", cena: 1000, kod: "med" },
+        {key: "20", kol: 1, kol2: 1, id: "21", src:"https://s.cdnmpro.com/284187778/p/l/6/primed-lipov-med-700g~736.jpg", alt: "tegla sa medom", ime: "Lipov med", kg: "500 g", cena: 500, kod: "med" },
+        {key: "21", kol: 1, kol2: 1, id: "22", src:"https://primed.rs/wp-content/uploads/2021/03/SUNCOKRETOV-MED-700g-1.jpg", alt: "tegla sa medom", ime: "Suncokretov med", kg: "1 kg", cena: 800, kod: "med" },
+        {key: "22", kol: 1, kol2: 1, id: "23", src:"https://primed.rs/wp-content/uploads/2021/03/SUNCOKRETOV-MED-700g-1.jpg", alt: "tegla sa medom", ime: "Suncokretov med", kg: "500 g", cena: 400, kod: "med" },
+        {key: "23", kol: 1, kol2: 1, id: "24", src:"https://primed.rs/wp-content/uploads/2021/03/primed-livadski-med-700g_739.jpg", alt: "tegla sa medom", ime: "Livadski med", kg: "1 kg", cena: 1000, kod: "med" },       
+        {key: "24", kol: 1, kol2: 1, id: "25", src:"https://primed.rs/wp-content/uploads/2021/03/primed-livadski-med-700g_739.jpg", alt: "tegla sa medom", ime: "Livadski med", kg: "500 g", cena: 500, kod: "med" },       
+        {key: "25", kol: 1, kol2: 1, id: "26", src:"https://admin.skolazdravlja.ba/uploads/images/bigstock-Propolis-Granules-In-A-Wooden-229463932.jpg", alt: "propolis", ime: "Propolis", kg: "500 g", cena: 1000, kod: "pp" },
+        {key: "26", kol: 1, kol2: 1, id: "27", src:"https://etarskaibiljnaulja.rs/1909/pcelinji-zuti-vosak-cera-alba-yellow-beeswax.jpg", alt: "vosak", ime: "Vosak", kg: "1 kg", cena: 200, kod: "pp" },
+        {key: "27", kol: 1, kol2: 1, id: "28", src:"http://pcelar-milojkovic.com/images_lrg/perga-lrg.jpg", alt: "perga", ime: "Perga", kg: "500 g", cena: 1000, kod: "pp" },
+        {key: "28", kol: 1, kol2: 1, id: "29", src:"http://webpcelarstvo.mojsajt.rs/uploads/31255/images/matica-pcela_5719cb43ec0e5.jpg?w=400&r=4x3", alt: "matica", ime: "Matice", kg: "1 komad", cena: 1000, kod: "pp" }
   ]);
 
   const [slike] = useState([
@@ -79,19 +81,21 @@ function App() {
       const a = proizvodi.filter((item) => item.id === proizvod.id );
       setKorpa(a);
       setPrazna(["puna"]);
-      setStavke(stavke + 1);
+      setStavke(a[0].kol2);
+      a[0].kol2 = 1;
     } else {
       const a = proizvodi.filter((item) => item.id === proizvod.id);
       const menjanje = korpa.indexOf(a[0]);
       if (menjanje >= 0) {
         korpa[menjanje].kol = korpa[menjanje].kol + 1;
         setKorpa(korpa);
-        setStavke(stavke + 1);
+        setStavke(stavke + a[0].kol2);
+        a[0].kol2 = 1;
       } else {
         setKorpa(korpa.concat(a));
-        setStavke(stavke + 1);
+        setStavke(stavke + a[0].kol2);
+        a[0].kol2 = 1;
       }
-      
     }
     
   }
@@ -101,13 +105,15 @@ function App() {
       <NavBar korpa={korpa} stavke={stavke}/>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/med' element={<Pčele korpa={korpa} setKorpa={setKorpa} proizvodi={proizvodi} dodaj={dodajUKorpu} />} />
-        <Route path='/pića' element={<Pića korpa={korpa} setKorpa={setKorpa} proizvodi={proizvodi} dodaj={dodajUKorpu} />} />
-        <Route path='/voće' element={<Voće korpa={korpa} setKorpa={setKorpa} proizvodi={proizvodi} dodaj={dodajUKorpu} />} />
-        <Route path='/džem' element={<Džem korpa={korpa} setKorpa={setKorpa} proizvodi={proizvodi} dodaj={dodajUKorpu} />} />
+        <Route path='/med' element={<Pčele korpa={korpa} setKorpa={setKorpa} proizvodi={proizvodi} dodaj={dodajUKorpu} stavke={stavke} setStavke={setStavke} />} />
+        <Route path='/pića' element={<Pića korpa={korpa} setKorpa={setKorpa} proizvodi={proizvodi} dodaj={dodajUKorpu} stavke={stavke} setStavke={setStavke}/>} />
+        <Route path='/voće' element={<Voće korpa={korpa} setKorpa={setKorpa} proizvodi={proizvodi} dodaj={dodajUKorpu} stavke={stavke} setStavke={setStavke}/>} />
+        <Route path='/džem' element={<Džem korpa={korpa} setKorpa={setKorpa} proizvodi={proizvodi} dodaj={dodajUKorpu} stavke={stavke} setStavke={setStavke}/>} />
         <Route path='/galerija' element={<Galery slike={slike} />} />
-        <Route path='/prodaja' element={<Sale korpa={korpa} setKorpa={setKorpa} proizvodi={proizvodi} dodaj={dodajUKorpu} />} />
+        <Route path='/prodaja' element={<Sale korpa={korpa} setKorpa={setKorpa} proizvodi={proizvodi} dodaj={dodajUKorpu} stavke={stavke} setStavke={setStavke} />} />
         <Route path='/korpa' element={<Cart korpa={korpa} setKorpa={setKorpa} prazna={prazna} setPrazna={setPrazna} stavke={stavke} setStavke={setStavke} />} />
+        <Route path='/Prijava' element={<Prijava/>} />
+        <Route path='/Registracija' element={<Registracija/>} />
       </Routes>
       <Footer />
     </div>
