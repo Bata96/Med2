@@ -315,7 +315,8 @@
 }
 .pčele .pozadina {
   margin-top: 0;
-  height: 100%;
+  min-height: 100vh;
+  max-height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1027,6 +1028,24 @@
   }
   h2 {
     font-size: 20px;
+  }
+  .pčele .pozadina .ostalo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 140px);
+    grid-template-rows: 1fr;
+    border-bottom: 1px solid white;
+    margin-top: 50px;
+    padding: 0;
+  }
+  .pčele .pozadina .ostalo .artikli {
+    font-size: 15px;
+  }
+  .pčele .pozadina .ostalo .artikli img {
+    width: 130px;
+    height: 130px;
+  }
+  .pčele .pozadina .ostalo .korpa {
+    font-size: 16px;
   }
   .ponuda {
     display: grid;
